@@ -1,0 +1,28 @@
+Button {
+    text-transform: capitalize !important;
+    align-self: center;
+    background-color: #fd7c2b !important;
+    color: black !important;
+    font-weight: bold !important;
+    box-shadow: 4px 6px 13px -6px rgba(0,0,0,0.75) !important;
+    transition: all 300ms ease-out !important ;
+    padding: 5px 20px !important;
+    /* cursor: pointer !important; */
+  }
+  Button:hover {
+    background-color: #FDC377 !important;
+    box-shadow: 0px 0px 0px 0px !important ;
+    
+  }
+  .outlined {
+    background: none !important;
+    color: #fdc377 !important ;
+    border: 1px solid #fdc377 !important;
+    transition: all 300ms ease-out;
+    padding: 3px 10px !important;
+  }
+  .outlined:hover {
+      color: black !important;
+    background-color: #fd7c2b !important ;
+    border: 1px #fd7c2b solid !important;
+  }

@@ -1,0 +1,5 @@
+*{
+    cursor: url('./cursor/target.cur'), auto !important;
+    /* cursor: crosshair; */
+    /* cursor: ; */
+}

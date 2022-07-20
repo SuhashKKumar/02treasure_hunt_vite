@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+.treasure_path{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    background-image: linear-gradient(
+        to top,
+        rgb(3, 3, 3),
+        rgba(255, 255, 255, 0)
+      ),
+      url("../assets/images/chest_box.jpg");
+    display: grid;
+}
+.treasure_path h1{
+    color: #FD7C2B !important;
+    font-family: "Sketsa",'Dancing Script', cursive !important;
+    font-weight: 100;
+    font-size: 10rem;
+    align-self: flex-end;
+    text-shadow: 6px 6px 2px #000;
+}
+.treasure_path h2{
+    color: #FD7C2B !important;
+    font-size: 5rem;
+    font-weight: 400;
+    text-shadow: 4px 4px 2px #000;
+}
+.treasure_path Button{
+    justify-self: center;
+}
+.buttons_container{
+    width: 100%;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+}

@@ -1,0 +1,39 @@
+.cookies_container{
+    color: white !important;
+    position: absolute;
+    /* backdrop-filter: blur(4px) saturate(146%); */
+    /* background-color: aqua; */
+    backdrop-filter: blur(7px) saturate(146%);
+    -webkit-backdrop-filter: blur(7px) saturate(146%);
+    top: 0vh;
+    width: 100vw;
+    height: 100vh;
+    left: 0vw;
+    z-index: 1;
+}
+.cookies{
+    position: relative;
+    top: 42vh;
+    height: 150px;
+    backdrop-filter: blur(25px) saturate(146%);
+    -webkit-backdrop-filter: blur(25px) saturate(146%);
+    background-color: rgba(253, 195, 119, 0.13);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.cookies h3{
+    text-shadow: 4px 4px 2px #000;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.cookies h4{
+    /* line-height: 1px; */
+    font-weight: 200;
+    /* color: black; */
+    text-shadow: 5px 0px 2px #000;
+    
+}
