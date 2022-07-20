@@ -3,6 +3,8 @@ import "../styles/FeedbackForm.css";
 import Buttons from "./Buttons";
 import { db } from "../Utils/Firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FeedbackForm = ({ form, setForm }) => {
   const defaultFormFields = {
@@ -22,21 +24,50 @@ const FeedbackForm = ({ form, setForm }) => {
         message: message,
       })
         .then(() => {
-          alert("Thanks for the feedback");
+          toast.success("Thanks for the feedback", {
+            position: "top-right",
+            theme: "dark",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            closeButton: false,
+          });
         })
         .catch((error) => {
-          alert(error.message);
+          toast.error(error.message, {
+            position: "top-right",
+            theme: "dark",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            closeButton: false,
+          });
         });
       setFormFields(defaultFormFields);
-      setForm(!form);
+      // setForm(!form);
     } else {
-      alert("please fill the fields");
-
+      toast.warn("Please fill the fields", {
+        position: "top-right",
+        theme: "dark",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton: false,
+      });
     }
   };
-  const closeHandler=()=>{
+  const closeHandler = () => {
     setForm(!form);
-  }
+  };
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
@@ -49,6 +80,7 @@ const FeedbackForm = ({ form, setForm }) => {
   };
   return (
     <div className="form_container" style={styles.forms}>
+      <ToastContainer />
       <div className="form">
         <h3>Feedback Form</h3>
         <input
@@ -77,9 +109,9 @@ const FeedbackForm = ({ form, setForm }) => {
           rows="4"
           cols="50"
         />
-        <div className="buttons_container" >
-        <Buttons name="Close" CookiesHandler={closeHandler} />
-        <Buttons name="Submit Feedback" CookiesHandler={FormHandler} />
+        <div className="buttons_container">
+          <Buttons name="Close" CookiesHandler={closeHandler} />
+          <Buttons name="Submit Feedback" CookiesHandler={FormHandler} />
         </div>
       </div>
     </div>

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/HomePage.css";
 import Button from "./Buttons";
 import Footer from "./Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomePage = ({ setPathName }) => {
   const [name, setName] = useState("");
@@ -18,7 +20,17 @@ const HomePage = ({ setPathName }) => {
   const SearchHandler = () => {
     setPathName(name);
     if (name === "") {
-      alert("please search");
+      toast.warn("Please enter valid value!", {
+        position: "top-right",
+        theme:'dark',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        closeButton:false,
+      });
     } else {
       name === ""
         ? alert("please enter")
@@ -32,6 +44,7 @@ const HomePage = ({ setPathName }) => {
     <div className="homepage_parent">
       <div className="homepage">
         <div className="homepage">
+          <ToastContainer/>
           <h3>{adventure ? "" : "Welcome to"} </h3>
           <h1 className="homepage_title">
             {adventure ? "The treasure is here" : "Treasure Hunt"}
